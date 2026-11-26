@@ -1,0 +1,11 @@
+{
+  "name": "sound-stickers",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Make a sticker and the short sound that goes with it, in the browser.",
+  "license": "MIT",
+  "scripts": {
+    "test": "node --test test/*.test.js"
+  }
+}

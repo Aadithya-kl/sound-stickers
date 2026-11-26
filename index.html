@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; img-src 'self' blob: data:; media-src 'self' blob:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>Sound Stickers</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1 data-t="title">Sound Stickers</h1>
+    <p data-t="tagline"></p>
+    <div class="lang">
+      <button type="button" data-lang="es" aria-label="Español">ES</button>
+      <button type="button" data-lang="en" aria-label="English">EN</button>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <h2 data-t="step1"></h2>
+      <label class="file"><span data-t="pickImage"></span>
+        <input id="image" type="file" accept="image/*">
+      </label>
+      <div class="row">
+        <label><input id="outline" type="checkbox" checked> <span data-t="outline"></span></label>
+        <label><span data-t="outlineWidth"></span>
+          <input id="outlineWidth" type="range" min="0" max="14" value="8">
+        </label>
+      </div>
+      <canvas id="preview" width="512" height="512" role="img" data-t-label="preview"></canvas>
+    </section>
+
+    <section>
+      <h2 data-t="step2"></h2>
+      <label class="file"><span data-t="pickAudio"></span>
+        <input id="audio" type="file" accept="audio/*,video/*">
+      </label>
+      <p class="or" data-t="or"></p>
+      <button id="record" type="button" data-t="record"></button>
+      <div class="row">
+        <label><span data-t="start"></span> <input id="start" type="number" min="0" step="0.1" value="0"></label>
+        <label><span data-t="end"></span> <input id="end" type="number" min="0" step="0.1" value="0"></label>
+        <button id="play" type="button" data-t="play" disabled></button>
+      </div>
+      <p class="hint"><span data-t="maxNote"></span> <span id="duration"></span></p>
+    </section>
+
+    <section>
+      <h2 data-t="step3"></h2>
+      <button id="build" type="button" class="primary" data-t="build"></button>
+      <p id="message" role="status"></p>
+      <div id="results" hidden>
+        <button id="share" type="button" data-t="share" hidden></button>
+        <p class="hint" id="shareNote" data-t="shareNote" hidden></p>
+        <a id="dlSticker" download="sticker.webp"><span data-t="download"></span> sticker</a>
+        <a id="dlSound" download="sound.wav" hidden><span data-t="download"></span> sound.wav</a>
+        <audio id="soundPreview" controls hidden></audio>
+      </div>
+      <h3 data-t="howTo"></h3>
+      <ol>
+        <li data-t="how1"></li>
+        <li data-t="how2"></li>
+      </ol>
+      <p class="hint" data-t="how3"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p data-t="privacy"></p>
+    <p><a href="https://github.com/Dio77799/sound-stickers" data-t="source">Source code</a> · MIT</p>
+  </footer>
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>
